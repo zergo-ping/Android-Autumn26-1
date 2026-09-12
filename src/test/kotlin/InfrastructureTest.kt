@@ -15,3 +15,4 @@ class InfrastructureTest {
         assertNotNull(javaClass.classLoader.getResourceAsStream("fakePlayers.csv"))
     }
 }
+

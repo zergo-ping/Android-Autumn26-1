@@ -13,6 +13,8 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation("com.github.javafaker:javafaker:1.0.2")
+    // Source: https://mvnrepository.com/artifact/org.jfree/jfreechart
+    implementation("org.jfree:jfreechart:1.5.6")
 }
 
 tasks.test {
