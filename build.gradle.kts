@@ -21,6 +21,21 @@ tasks.test {
     useJUnitPlatform()
 }
 
+val consoleEncoding = listOf(
+    "-Dfile.encoding=UTF-8",
+    "-Dstdout.encoding=UTF-8",
+    "-Dstderr.encoding=UTF-8",
+)
+
+tasks.withType<JavaExec>().configureEach {
+    jvmArgs(consoleEncoding)
+    defaultCharacterEncoding = "UTF-8"
+}
+
+tasks.withType<Test>().configureEach {
+    jvmArgs(consoleEncoding)
+}
+
 kotlin {
     jvmToolchain(17)
 }

@@ -5,15 +5,11 @@ import model.Position
 import model.Team
 
 /**
- * Разбор CSV с футболистами.
+ * Разбор CSV
  *
  * Формат: `;`-разделённые строки с заголовком:
  * Name;Team;City;Position;Nationality;Agency;Transfer cost;Participations;
  * Goals;Assists;Yellow cards;Red cards
- *
- * Правила маппинга (см. README): пустое агентство — `null` и игрок остаётся,
- * пустые обязательные текстовые поля, нераспознанная позиция и нечисловые
- * числовые поля — строка пропускается и учитывается в [ParseResult.skippedCount].
  */
 object CsvParser {
 
@@ -25,7 +21,6 @@ object CsvParser {
 
     /**
      * Разбирает CSV из потока строк, не загружая файл целиком в память
-     * (последовательность ленива, источник закрывает вызывающий код).
      */
     fun parse(lines: Sequence<String>): ParseResult {
         var skipped = 0
